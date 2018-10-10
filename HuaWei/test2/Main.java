@@ -18,8 +18,8 @@ public class Main{
             if(str.charAt(0) == '-') {
             	
             } else {
-				str = "+"+str;
-			}
+		str = "+"+str;
+	    }
             String[] k = str.split("X\\^\\d{1,}");
             String[] v = str.split("X\\^|\\+|\\-");
             for(int i=0; i < k.length; i++) {
@@ -64,7 +64,6 @@ public class Main{
             boolean flag = true;
             while(iter.hasNext()) {
             	
-            
             	int key = (int)iter.next();
             	int val = (int)trs.get(key);
             	if(val == 0) {
@@ -75,15 +74,15 @@ public class Main{
                 		System.out.print(val+"X^"+key);
                 	}else {
                 		System.out.print(val+"X^"+key);
-    				}
+    			}
             		flag =false;
             		
             	} else {
-            	if(val >= 0) {
-            		System.out.print("+" + val+"X^"+key);
-            	}else {
-            		System.out.print(val+"X^"+key);
-				}
+            		if(val >= 0) {
+            			System.out.print("+" + val+"X^"+key);
+            		}else {
+            			System.out.print(val+"X^"+key);
+			}
             	}
             	
             }
