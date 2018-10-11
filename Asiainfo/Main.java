@@ -31,7 +31,10 @@ public class Main {
 		while(it.hasNext()){
 			String key = (String)it.next();
 			int val = tm.get(key);
-			res.append(key + ",");
+			if(val > 0){
+				res.append(key + ",");
+			}
+
 		}
 		//System.out.println(res);
 		return new String(res).split(",");
