@@ -40,7 +40,7 @@ public class Main{
 				// TODO: handle exception
 			}
             
-            if(judge(N, 3)){
+            if(judge(N, 3, nums.length - 1)){
                 System.out.println("True");
             } else {
                 System.out.println("False");
@@ -53,23 +53,26 @@ public class Main{
         }
         in.close();
     }
-    public static boolean judge(int n, int times) {
+    public static boolean judge(int n, int times, int len) {
 //    	System.out.println("--------n:times  "+n+":"+times+"----------");
     	if(times == 0 && n == 0) {
 //    		System.out.println("!!!! 0 true");
     		return true;
     	}
-    	if(times == 0) {
+    	if(times == 0 ) {
 //    		System.out.println("0 break");
     		return false;
     	}
     	boolean res;
-    	for(int i = nums.length - 1; i >= 0; i--) {
+    	for(int i = len; i >= 0; i--) {
 //    		System.out.println("nums[" + i +"]:" + i);
     		if(true) {//不考虑正负数
 //    		if(n >= nums[i]) {//只考虑了正数，简化了计算
 //    			System.out.println(">: n-nums[" +i+"]:"+n+"-"+nums[i]);
-    			res = judge(n - nums[i], times - 1);
+    			if(i - 1 < 0) {
+    				continue;
+    			}
+    			res = judge(n - nums[i], times - 1, i - 1);
     			if(res == true) {
     				return true;
     			}
